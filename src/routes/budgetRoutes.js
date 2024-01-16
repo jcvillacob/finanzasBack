@@ -4,8 +4,8 @@ const budgetController = require('../controllers/budgetController');
 const router = express.Router();
 
 // Rutas para presupuesto (budget)
-router.get('/', budgetController.getBudget);
-router.post('/', budgetController.createOrUpdateBudget);
+router.get('/:id', budgetController.getBudget);
+router.post('/:id', budgetController.createOrUpdateBudget);
 router.delete('/', budgetController.deleteBudget);
 
 module.exports = router;
