@@ -3,6 +3,7 @@ const userRouter = require('./userRoutes');
 const categoryRouter = require('./categoryRoutes');
 const accountRouter = require('./accountRoutes');
 const budgetRouter = require('./budgetRoutes');
+const transactionRouter = require('./transactionRoutes');
 
 const app = express();
 
@@ -11,6 +12,7 @@ app.use('/users', userRouter);
 app.use('/categories', categoryRouter);
 app.use('/accounts', accountRouter);
 app.use('/budgets', budgetRouter);
+app.use('/transactions', transactionRouter);
 
 
 module.exports = app;
