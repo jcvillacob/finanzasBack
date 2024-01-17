@@ -54,19 +54,3 @@ exports.deleteUser = async (req, res) => {
     }
 };
 
-// Controlador para login
-exports.login = async (req, res) => {
-    try {
-        const { username, password } = req.body;
-        const user = await User.findOne({ username });
-
-        if (!user || !(await user.comparePassword(password))) {
-            return res.status(401).json({ status: 'fail', message: 'Invalid username or password' });
-        }
-
-        // Aquí puedes generar un JWT o cualquier método de autenticación
-        res.status(200).json({ status: 'success', message: 'Logged in successfully' });
-    } catch (error) {
-        res.status(400).json({ status: 'fail', message: error });
-    }
-};
